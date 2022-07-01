@@ -12,6 +12,12 @@
 </head>
 
 <body>
+  <nav class="navbar bg-light fixed-top justify-content-between">
+    <div class="container">
+            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+            <a class="nav-link" href="./admin.html">Admin</a>
+    </div>
+  </nav>
     <header>
         <div>
             <div class="text-white">
@@ -85,7 +91,7 @@
                         <br>
                         <br>
                         <select class="form-select" name="age" id="age">
-                            <option value="">All Ages</option>
+                            <option value="">Age Range</option>
                             <option value="20">15-20</option>
                             <option value="40">21-40</option>
                             <option value="1000">1000+</option>
@@ -141,12 +147,12 @@
     </section>
 
     <footer>
-        <section id="contacts" class="bg-black d-flex justify-content-around align-items-center">
+        <section id="contacts" class="bg-black d-flex justify-content-center align-content-center">
             <div class="container bg-transparent text-white w-100">
-              <form class="form w-75 Home p-3" action="https://formspree.io/f/moqrywdp" method="POST">
+              <form class="form w-75 mx-auto p-3" action="https://formspree.io/f/moqrywdp" method="POST">
                 <div class="">
                   <h3 class="text-center p-5">Contact Me</h3>
-                  <!-- NAME  -->
+                  <!-- Name  -->
                   <div class="row my-2">
                     <label for="name" class="col-md-3 col-form-label-lg">Name: </label>
                     <div class="col-9">
@@ -154,7 +160,7 @@
                     </div>
                   </div>
       
-                  <!-- SURNAME  -->
+                  <!-- Surname  -->
                   <div class="row my-2">
                     <label for="name" class="col-md-3 col-form-label-lg">Surname: </label>
                     <div class="col-9">
@@ -170,7 +176,7 @@
                     </div>
                   </div>
       
-                  <!-- MESSAGE -->
+                  <!-- Message -->
                   <div class="row my-2">
                     <label for="message" class="col-md-3 col-form-label-lg">Message: </label>
                     <div class="col-9 form-floating">
@@ -179,7 +185,7 @@
                     </div>
                   </div>
       
-                  <!-- SUBMIT  -->
+                  <!-- Submit -->
                   <div class="row my-5">
                     <label class="col-md-2 col-form-label-lg"></label>
                     <div class="col-8">

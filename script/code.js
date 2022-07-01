@@ -1,9 +1,8 @@
-
-// const display = document.getElementById("list");
-// let lists = JSON.parse(localStorage.getItem("list") || "[]");
-
-let anime = [
+let arr = JSON.parse(localStorage.getItem("anime"))
+  ? JSON.parse(localStorage.getItem("anime"))
+  : [
     {
+    id: 1,
     name: "Bakugo",
     age: 20,
     kage: 15,
@@ -18,6 +17,7 @@ let anime = [
     }  
     },
     {
+      id: 2,
     name: "Ban",
     age: 1000,
     kage: "1000+",
@@ -25,13 +25,14 @@ let anime = [
     height: 179,
     keight: "210cm",
     rent: "R30 000",
-    img2: {
+    img: {
       i1: `../image/Ban/Ban_breaking_out_of_his_cell2.png`,
       i2: `../image/Ban/cf92aca6cbbd491282e769ea3ae9f9c7.png`,
       i3: `../image/Ban/uwp1188980.png`
     } 
     },
     {
+    id: 3,
     name: "Kageyama",
     age: 20,
     kage: 16,
@@ -46,6 +47,7 @@ let anime = [
     } 
     },
     {
+    id: 4,
     name: "Kaneki",
     age: 40,
     kage: 22,
@@ -60,6 +62,7 @@ let anime = [
     } 
     },
     {
+    id: 5,
     name: "Kirishima",
     age: 20,
     kage: 16,
@@ -74,6 +77,7 @@ let anime = [
     }
     },
     {
+    id: 6,
     name: "Yukio",
     age: 20,
     kage: 16,
@@ -88,6 +92,7 @@ let anime = [
     }
     },        
     {
+    id: 7,
     name: "Nishinoya",
     age: 20,
     kage: 17,
@@ -102,6 +107,7 @@ let anime = [
     } 
     },
     {
+    id: 8,
     name: "Shoto",
     age: 20,
     kage: 15,
@@ -116,6 +122,7 @@ let anime = [
     } 
     },
     {
+    id: 9,
     name: "Sugawara",
     age: 20,
     kage: 18,
@@ -130,6 +137,7 @@ let anime = [
     }
     },  
     {
+    id: 10,
     name: "Tsukishima",
     age: 20,
     kage: 16,
@@ -144,6 +152,7 @@ let anime = [
     } 
     },
     {
+    id: 11,
     name: "Sukuna",
     age: 1000,
     kage: "1000+",
@@ -158,6 +167,7 @@ let anime = [
     }  
     },
     {
+    id: 12,
     name: "Tanaka",
     age: 20,
     kage: 17,
@@ -179,59 +189,61 @@ function displayBoys(n){
   n.forEach((item, index) => {
     boys.innerHTML += `
     <div class="card p-3 m-3 mx-auto justify-center" style="height:450px; width:400px;">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+
+    <div id="carouselExampleIndicators${item.id}" class="carousel slide" data-bs-ride="true">
+
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+    <button type="button" data-bs-target="#carouselExampleIndicators${item.id}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+
+    <button type="button" data-bs-target="#carouselExampleIndicators${item.id}" data-bs-slide-to="1" aria-label="Slide 2"></button>
+
+    <button type="button" data-bs-target="#carouselExampleIndicators${item.id}" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
   </div>
+
   <div class="carousel-inner">
+
     <div class="carousel-item active">
+
       <img src="${item.img.i1}" class="d-block w-100" style="height:300px; width:360px;">
+
     </div>
+
     <div class="carousel-item">
+
       <img src="${item.img.i2}" class="d-block w-100" style="height:300px; width:360px;">
+
     </div>
+
     <div class="carousel-item">
+
       <img src="${item.img.i3}" class="d-block w-100" style="height:300px; width:360px;">
+
     </div>
+
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators${item.id}" data-bs-slide="prev">
+
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
     <span class="visually-hidden">Previous</span>
+
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators${item.id}" data-bs-slide="next">
+
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
     <span class="visually-hidden">Next</span>
+
   </button>
+
 </div>
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="${item.img2.i1}" class="d-block w-100" style="height:300px; width:360px;">
-    </div>
-    <div class="carousel-item">
-      <img src="${item.img2.i2}" class="d-block w-100" style="height:300px; width:360px;">
-    </div>
-    <div class="carousel-item">
-      <img src="${item.img2.i3}" class="d-block w-100" style="height:300px; width:360px;">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+
       <div class="card-body">
+
         <p><i class="fa-solid fa-person"></i> Name: ${item.name}</p>
         <p><i class="fa-regular fa-address-card"></i> Age: ${item.kage}</p>
         <p><i class="fa-solid fa-ruler-vertical"></i> Height: ${item.keight}</p>
@@ -277,11 +289,6 @@ function sortRent(Rent){
 }
 document.getElementById('budget').addEventListener('change',sortRent);
 
-    // button.slick-next.slick-arrow::before
-    // document.querySelector("#houzez-properties-carousel-oKyiw > div > div > div:nth-child(8) > div > div > div.item-header > div.listing-image-wrap > div > div > div > button.slick-next.slick-arrow")
-    // <img src="${item.img.i2}" class="card-img-top" style="height:300px; width:360px;">
-    //   <img src="${item.img.i3}" class="card-img-top" style="height:300px; width:360px;">
-
     document.querySelector("#sort").addEventListener("click", () => {
       lists.sort((a, b) => {
         let fa = a.task.toLowerCase(),
@@ -297,4 +304,4 @@ document.getElementById('budget').addEventListener('change',sortRent);
       });
       loadData();
     });
-    // <img src="${item.img.i1}" class="card-img-top" style="height:300px; width:360px;"></img>
+  
