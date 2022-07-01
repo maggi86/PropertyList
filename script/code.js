@@ -1,5 +1,5 @@
 let arr = JSON.parse(localStorage.getItem("anime"))
-  ? JSON.parse(localStorage.getItem("anime"))
+? JSON.parse(localStorage.getItem("anime"))
   : [
     {
     id: 1,
@@ -183,10 +183,11 @@ let arr = JSON.parse(localStorage.getItem("anime"))
     }
 ];
 
-let boys = document.getElementById("Boys")
-function displayBoys(n){
+function displayBoys(){
+  let boys = document.getElementById("Boys");
+
   boys.innerHTML = ''
-  n.forEach((item, index) => {
+  arr.forEach((item, index) => {
     boys.innerHTML += `
     <div class="card p-3 m-3 mx-auto justify-center" style="height:450px; width:400px;">
 
@@ -253,7 +254,7 @@ function displayBoys(n){
     `;
   });
 } 
-displayBoys(anime)
+displayBoys()
 
 function sortAge(Age){
   let ageBoys = anime.filter(e =>{

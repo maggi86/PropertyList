@@ -1,5 +1,6 @@
-let anime = JSON.parse(localStorage.getItem("Anime"))
-  ? JSON.parse(localStorage.getItem("Anime"))
+// localStorage.removeItem('anime')
+let anime = JSON.parse(localStorage.getItem("anime"))
+  ? JSON.parse(localStorage.getItem("anime"))
   : [
         {
         id: 1,
@@ -17,7 +18,7 @@ let anime = JSON.parse(localStorage.getItem("Anime"))
         }  
         },
         {
-          id: 2,
+        id: 2,
         name: "Ban",
         age: 1000,
         kage: "1000+",
@@ -181,13 +182,12 @@ let anime = JSON.parse(localStorage.getItem("Anime"))
           i3: `../image/Tanaka/tumblr_pqmho5l8U91wzzbau_1280.png`,
         }   
         }
-    ])
-    )
-  );
+    ];
   
-  let display = document.getElementById("tbody");
+   
   
   function loadData() {
+    let display = document.getElementById("tbody");
     display.innerHTML = "";
     anime.forEach((item, index) => {
       display.innerHTML += `
@@ -202,7 +202,7 @@ let anime = JSON.parse(localStorage.getItem("Anime"))
       <a type="button" class="btn" data-bs-toggle="modal" data-bs-target="#update${index}"><i class="fa-solid fa-pen-to-square"></i></a>
       
       <!-- Delete -->
-      <a class="btn" id="delete"><i class="fa-solid fa-trash-can"></i></a>
+      <a class="btn" id="delete" onclick="deleteItem(${index})"><i class="fa-solid fa-trash-can"></i></a>
       </td>
       </tr>
       <!-- Modal -->
@@ -214,32 +214,47 @@ let anime = JSON.parse(localStorage.getItem("Anime"))
               <button type="button" class="btn-close btn btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
           <div class="modal-body">
-          <div class="row">
-          <div class="col-6">
+          <div class="row-6">
+          <div class="col-3">
               <!-- Name -->
                   <div class="mb-3">
-                      <label for="editTitle${index}" class="form-label">Address</label>
+                      <label for="editName${index}" class="form-label">Name</label>
                       <input class="form-control" type="text"
-                      name="editTitle${index}"
-                      id="editTitle${index}"
+                      name="editName${index}"
+                      id="editName${index}"
                       value="${item.name}"/>
                   </div>
       
               <!-- Age -->
                   <div class="mb-3">
-                      <label for="editAge${index}" class="form-label">Age</label>
+                      <label for="editAge${index}" class="form-label">Age Range</label>
                       <input class="form-control" type="text"
                       name="editAge${index}"
                       id="editAge${index}"
+                      value="${item.age}"/>
+                  </div>  
+                  <div class="mb-3">
+                      <label for="editKage${index}" class="form-label">Age</label>
+                      <input class="form-control" type="text"
+                      name="editKage${index}"
+                      id="editKage${index}"
                       value="${item.kage}"/>
-                  </div>
+                  </div>    
+
       
               <!-- Height -->
                   <div class="mb-3">
-                      <label for="editHeight${index}" class="form-label">Height</label>
+                      <label for="editHeight${index}" class="form-label">Height Range</label>
                       <input class="form-control" type="text"
                       name="editHeight${index}"
                       id="editHeight${index}"
+                      value="${item.height}"/>
+                  </div>
+                  <div class="mb-3">
+                      <label for="editKeight${index}" class="form-label">Height</label>
+                      <input class="form-control" type="text"
+                      name="editKeight${index}"
+                      id="editKeight${index}"
                       value="${item.keight}"/>
                   </div>
       
@@ -251,7 +266,6 @@ let anime = JSON.parse(localStorage.getItem("Anime"))
                       id="editImg${index}"
                       value="${item.img}"/>
                   </div>
-              </div>
               
               <!-- Type -->
                   <div class="mb-3">
@@ -271,12 +285,12 @@ let anime = JSON.parse(localStorage.getItem("Anime"))
                       value="${item.rent}"/>
                   </div>
               </div>
-           </div> 
-              
+            </div> 
+            </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger data-bs-dismiss="modal">Close</button>
-              <button type="button" onclick="updateProperty(${index})" class="btn btn-danger data-bs-dismiss="modal">Save changes</button>
+              <button type="button" onclick="updateanime(${index})" class="btn btn-danger data-bs-dismiss="modal">Save changes</button>
             </div>
           </div>
         </div>
@@ -289,48 +303,72 @@ let anime = JSON.parse(localStorage.getItem("Anime"))
   // Add
   function addItem() {
     // e.preventDefault();
-    lists.push({
-      item: lists.length - 1 + 1,
-      task: document.getElementById("add").value,
-      createdDate: new Date(),
-      completed: false,
-    });
-    loadData();
+    anime.push(
+        {
+            id: anime.length + 1,
+            name: document.querySelector('#addName').value,
+            kage: document.querySelector('#addKage').value,
+            age: document.querySelector('#addAge').value,
+            height: document.querySelector('#addSize').value,
+            keight: document.querySelector('#addKeight').value,
+            img: document.querySelector('#addImg').value,
+            type: document.querySelector('#addboys').value,
+            rent: document.querySelector('#addRent').value,
+        }
+    )
     localStorage.setItem("anime", JSON.stringify(anime));
+    loadData();
   }
+
+  function sortName() {
+    console.log('Hello')
+    let direction = document.querySelector("#sortName").value;
+    let sortedarray = anime.sort((a, b) => {
+      if (a.name.toLowerCase() < b.name.toLowerCase()) {
+        return -1;
+      }
+      if (a.name.toLowerCase() > b.name.toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    });
+    if (direction == "descending") sortedarray.reverse();
+    console.log(sortedarray);
+    loadData(anime);
+  }
+
   
   // UPDATE
-  function updateProperty(id) {
-    console.log('Im being clicked')
-    let type = document.getElementById(`editType${id}`).value
-    let location = document.getElementById(`editLocation${id}`).value
-    let address = document.getElementById(`editTitle${id}`).value
-    let picture = document.getElementById(`editPic${id}`).value
-    let bedrooms = document.getElementById(`editRooms${id}`).value
-    let bathrooms = document.getElementById(`editBath${id}`).value
-    let garage = document.getElementById(`editGarage${id}`).value
-    let price = document.getElementById(`editPrice${id}`).value
+  function updateAnime(id) {
+    let name = document.getElementById(`editName${id}`).value
+    let kage = document.getElementById(`editKage${id}`).value
+    let age = document.getElementById(`editAge${id}`).value
+    let keight = document.getElementById(`editKeight${id}`).value
+    let height = document.getElementById(`editSize${id}`).value
+    let img = document.getElementById(`editImg${id}`).value
+    let type = document.getElementById(`editboys${id}`).value
+    let rent = document.getElementById(`editRent${id}`).value
   
-    properties[id] = ({
+    anime[id] = ({
+      name,
+      kage,
+      age,
+      keight,
+      height,
+      img,
       type,
-      location,
-      address,
-      picture,
-      bedrooms,
-      bathrooms,
-      garage,
-      price
+      rent
     })
-    localStorage.setItem("property", JSON.stringify(properties));
+    localStorage.setItem("anime", JSON.stringify(anime));
     loadData()
   }
   
   // DELETE
   function deleteItem(id) {
     if (id > -1) {
-      lists.splice(id, 1);
-      localStorage.setItem("property", JSON.stringify(properties));
+        anime.splice(id, 1);
+      localStorage.setItem("anime", JSON.stringify(anime));
     }
     loadData();
   }
-  document.getElementById('delete').addEventListener('click', deleteItem)
+//   document.getElementById('delete').addEventListener('click', deleteItem)
