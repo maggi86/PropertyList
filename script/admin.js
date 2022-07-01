@@ -9,8 +9,8 @@ let anime = JSON.parse(localStorage.getItem("anime"))
         kage: 15,
         type: "Blondes",
         height: 164,
-        keight: "172cm",
-        rent: "R10 000",
+        keight: 172,
+        rent: 10000,
         img: {
           i1: `../image/Bakugo/main-qimg-8082d2ae2288d27a1f8cdbfbb1b1a33e-lq.png`,
           i2: `../image/Bakugo/ndzjkqgl424a.png`,
@@ -24,8 +24,8 @@ let anime = JSON.parse(localStorage.getItem("anime"))
         kage: "1000+",
         type: "Color",
         height: 179,
-        keight: "210cm",
-        rent: "R30 000",
+        keight: 210,
+        rent: 30000,
         img: {
           i1: `../image/Ban/Ban_breaking_out_of_his_cell2.png`,
           i2: `../image/Ban/cf92aca6cbbd491282e769ea3ae9f9c7.png`,
@@ -39,8 +39,8 @@ let anime = JSON.parse(localStorage.getItem("anime"))
         kage: 16,
         type: "Black",
         height: 179,
-        keight: "182cm",
-        rent: "R10 000",
+        keight: 182,
+        rent: 10000,
         img: {
           i1: `../image/Kageyama/anime-cute-haikyuu-kageyama-tobio-Favim.com-4983630.png`,
           i2: `../image/Kageyama/EVVcCk9UMAEMvkS.png`,
@@ -54,8 +54,8 @@ let anime = JSON.parse(localStorage.getItem("anime"))
         kage: 22,
         type: "Color",
         height: 164,
-        keight: "170cm",
-        rent: "R30 000",
+        keight: 170,
+        rent: 30000,
         img: {
           i1: `../image/Kaneki/artworks-000334148184-91h2rn-t500x500.png`,
           i2: `../image/Kaneki/C00f0b1cdb6b673c067c249fb5c980d5.png`,
@@ -69,8 +69,8 @@ let anime = JSON.parse(localStorage.getItem("anime"))
         kage: 16,
         type: "Color",
         height: 164,
-        keight: "170cm",
-        rent: "R20 000",
+        keight: 170,
+        rent: 20000,
         img: {
           i1: `../image/Kirishima/images.png`,
           i2: `../image/Kirishima/8e09c1011155726c43cbdee2c959ff67.png`,
@@ -84,8 +84,8 @@ let anime = JSON.parse(localStorage.getItem("anime"))
         kage: 16,
         type: "Black",
         height: 179,
-        keight: "180cm",
-        rent: "R20 000",
+        keight: 180,
+        rent: 20000,
         img: {
           i1: `../image/Yukio/93ddc13af163410d68fbe81c1375a60b.png`,
           i2: `../image/Yukio/afecd5418a9200a4144bfc311ce6a018.png`,
@@ -99,8 +99,8 @@ let anime = JSON.parse(localStorage.getItem("anime"))
         kage: 17,
         type: "Black",
         height: 150,
-        keight: "160.5cm",
-        rent: "R20 000",
+        keight: 160.5,
+        rent: 20000,
         img: {
           i1: `../image/Nishinoya/1ba63c1da84122ab3b8390b001e41444.jpg`,
           i2: `../image/Nishinoya/3gwzdk797lu41.png`,
@@ -114,8 +114,8 @@ let anime = JSON.parse(localStorage.getItem("anime"))
         kage: 15,
         type: "Color",
         height: 164,
-        keight: "176cm",
-        rent: "R20 000" ,
+        keight: 176,
+        rent: 20000 ,
         img: {
           i1: `../image/Shoto/avatars-LH92hC7SFmybsuap-ChJvVg-t500x500.png`,
           i2: `../image/Shoto/todoroki-aesthetic-paint-by-number.png`,
@@ -129,8 +129,8 @@ let anime = JSON.parse(localStorage.getItem("anime"))
         kage: 18,
         type: "Color",
         height: 164,
-        keight: "174.6cm",
-        rent: "R10 000" ,
+        keight: 174.6,
+        rent: 10000 ,
         img: {
           i1: `../image/Suga/2a78219ca8e01168f096fd8df0eafe52.png`,
           i2: `../image/Suga/50362ff575af32cb8788fa439d596c5a.png`,
@@ -144,8 +144,8 @@ let anime = JSON.parse(localStorage.getItem("anime"))
         kage: 16,
         type: "Blondes",
         height: 179,
-        keight: "190cm",
-        rent: "R10 000",
+        keight: 190,
+        rent: 10000,
         img:{
           i1: `../image/Suki/58c5b6407882d509a585f6dc87b3b3a3.png`,
           i2: `../image/Suki/a5316678db52a5c440c01bdcf3634e00.png`,
@@ -159,8 +159,8 @@ let anime = JSON.parse(localStorage.getItem("anime"))
         kage: "1000+",
         type: "Color",
         height: 164,
-        keight: "173cm",
-        rent: "R30 000",
+        keight: 173,
+        rent: 30000,
         img:{
           i1: `../image/Sukuna/ef9d37c43b7ab6bc634199dc7a099e8f.png`,
           i2: `../image/Sukuna/Ex1iSQJXEAgvMGp.png`,
@@ -174,8 +174,8 @@ let anime = JSON.parse(localStorage.getItem("anime"))
         kage: 17,
         type: "Black",
         height: 164,
-        keight: "178cm",
-        rent: "R30 000",
+        keight: 178,
+        rent: 30000,
         img: {
           i1: `../image/Tanaka/270325f541e8fdb62b0ecb62ec95ea44.png`,
           i2: `../image/Tanaka/5f84d22ec5d8fb7e5146db3f3aef0fa4.png`,
@@ -195,7 +195,7 @@ let anime = JSON.parse(localStorage.getItem("anime"))
       <th scope="row">${item.id}</th>
       <td>${item.name}</td>
       <td>${item.kage}</td>
-      <td>${item.keight}</td>
+      <td>${item.keight}cm</td>
       <!-- icons -->
       <td>
       <!-- Update -->
@@ -281,7 +281,7 @@ let anime = JSON.parse(localStorage.getItem("anime"))
                       <label for="editRent${index}" class="form-label">Rent Price</label>
                       <input class="form-control" type="text"
                       name="editRent${index}"
-                      id="editrent${index}"
+                      id="editRent${index}"
                       value="${item.rent}"/>
                   </div>
               </div>
@@ -290,7 +290,8 @@ let anime = JSON.parse(localStorage.getItem("anime"))
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger data-bs-dismiss="modal">Close</button>
-              <button type="button" onclick="updateanime(${index})" class="btn btn-danger data-bs-dismiss="modal">Save changes</button>
+
+              <button type="button" onclick="updateAnime(${index})" class="btn btn-danger" data-bs-dismiss="modal">Save changes</button>
             </div>
           </div>
         </div>
@@ -340,6 +341,7 @@ let anime = JSON.parse(localStorage.getItem("anime"))
   
   // UPDATE
   function updateAnime(id) {
+    console.log('dasa')
     let name = document.getElementById(`editName${id}`).value
     let kage = document.getElementById(`editKage${id}`).value
     let age = document.getElementById(`editAge${id}`).value

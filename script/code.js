@@ -183,11 +183,11 @@ let arr = JSON.parse(localStorage.getItem("anime"))
     }
 ];
 
-function displayBoys(){
+function displayBoys(n){
   let boys = document.getElementById("Boys");
 
   boys.innerHTML = ''
-  arr.forEach((item, index) => {
+  n.forEach((item, index) => {
     boys.innerHTML += `
     <div class="card p-3 m-3 mx-auto justify-center" style="height:450px; width:400px;">
 
@@ -254,10 +254,10 @@ function displayBoys(){
     `;
   });
 } 
-displayBoys()
+displayBoys(arr)
 
 function sortAge(Age){
-  let ageBoys = anime.filter(e =>{
+  let ageBoys = arr.filter(e =>{
      return e.age == Age.target.value
   })
   displayBoys(ageBoys)
@@ -266,16 +266,17 @@ document.getElementById('age').addEventListener('change',sortAge);
 
 
 function sortType(Type){
-  let typeBoys = anime.filter(e =>{
+  let typeBoys = arr.filter(e =>{
      return e.type == Type.target.value
   })
+  console.table(typeBoys)
   displayBoys(typeBoys)
 }
 document.getElementById('boys').addEventListener('change',sortType);
 
 
 function sortHeight(Height){
-  let heightBoys = anime.filter(e =>{
+  let heightBoys = arr.filter(e =>{
      return e.height == Height.target.value
   })
   displayBoys(heightBoys)
@@ -283,26 +284,11 @@ function sortHeight(Height){
 document.getElementById('size').addEventListener('change',sortHeight);
 
 function sortRent(Rent){
-  let rentBoys = anime.filter(e =>{
+  let rentBoys = arr.filter(e =>{
      return e.rent == Rent.target.value
   })
   displayBoys(rentBoys)
 }
 document.getElementById('budget').addEventListener('change',sortRent);
 
-    document.querySelector("#sort").addEventListener("click", () => {
-      lists.sort((a, b) => {
-        let fa = a.task.toLowerCase(),
-          fb = b.task.toLowerCase();
-    
-        if (fa < fb) {
-          return -1;
-        }
-        if (fa > fb) {
-          return 1;
-        }
-        return 0;
-      });
-      loadData();
-    });
   
